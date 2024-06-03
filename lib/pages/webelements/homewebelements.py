@@ -2,6 +2,12 @@ from selenium.webdriver.common.by import By
 
 
 class HomeWebElements:
-    where_label = (By.CSS_SELECTOR, '.primary-content h2')
-    signin_button = (By.CSS_SELECTOR, '.menu__wrapper .menu-label__wrapper button')
-    search_button = (By.CSS_SELECTOR, '.pageContent .SearchPage__FrontDoor .HPw7-form-fields-and-submit .HPw7-submit button')
+    where_label = (By.CSS_SELECTOR, '#main-search-form h2')
+    signin_button = (By.XPATH, "//div[@id='root']//child::span[@class='J-sA-label']//ancestor::div[@role='button']")
+    search_button = (By.XPATH, "//button[contains(@class,'animation-search')]")
+
+    name_tag_input = (By.CSS_SELECTOR, "input[aria-label='Origen']")
+    name_dropdown_column_input = (By.CSS_SELECTOR, "input[aria-label='Destino']")
+    search_tag_input = (By.XPATH, "//div[@id='main-search-form']//child::span[text()='Solo ida']")
+    cancel_button = (By.CSS_SELECTOR, "div.c_neb-item-close")
+    create_column_disabled_button = (By.XPATH, "//div[contains(@class,'-nav-button')]//child::div")
