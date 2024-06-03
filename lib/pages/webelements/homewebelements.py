@@ -11,3 +11,7 @@ class HomeWebElements:
     search_tag_input = (By.XPATH, "//div[@id='main-search-form']//child::span[text()='Solo ida']")
     cancel_button = (By.CSS_SELECTOR, "div.c_neb-item-close")
     create_column_disabled_button = (By.XPATH, "//div[contains(@class,'-nav-button')]//child::div")
+
+
+def option_menu_right(option):
+    return By.XPATH, f"//div[contains(@class,'menu-item-title') and text()='{option}']"

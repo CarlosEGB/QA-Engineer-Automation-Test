@@ -28,3 +28,22 @@ Feature: Validate element created dropdown column
       | https://www.kayak.com.my/ |
       | https://www.kayak.com.pr/ |
       | https://www.kayak.com.br/ |
+
+  @menuOptions
+  Scenario Outline: Navigate each of the right menu options and validate the URL
+    Given I navigate to the kayak main page
+    When I navigate each of the right menu "<option>"
+    Then The url page should be equal to the next "<url>" url
+
+    Examples:
+      | option             | url                                                   |
+      | Vuelos             | https://www.kayak.com.co/flights                      |
+      | Alojamientos       | https://www.kayak.com.co/stays                        |
+      | Carros             | https://www.kayak.com.co/cars                         |
+      | Paquetes           | https://www.kayak.com.co/citybreaks                   |
+      | Explore            | https://www.kayak.com.co/explore/                     |
+      | Blog               | https://www.kayak.com.co/news/                        |
+      | Vuelos directos    | https://www.kayak.com.co/direct                       |
+      | El mejor momento   | https://www.kayak.com.co/el-mejor-momento-para-viajar |
+      | KAYAK for Business | https://www.kayak.com.co/business                     |
+      | Trips              | https://www.kayak.com.co/trips                        |
